@@ -3,7 +3,3 @@ export interface Votes {
   neutral: number;
   bad: number;
 }
-
-export type VoteType = {
-  type: "good" | "neutral" | "bad";
-};

@@ -3,6 +3,7 @@ import styles from "./VoteStats.module.css";
 import type { Votes } from "../../types/votes";
 //! --------------------------------------
 
+//! 🔹 Interface
 interface VoteStatsProps {
   votes: Votes;
   total: number;
@@ -32,3 +33,4 @@ export default function VoteStats({ votes, total, positive }: VoteStatsProps) {
     </div>
   );
 }
+//! --------------------------------------

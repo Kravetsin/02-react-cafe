@@ -1,5 +1,6 @@
 //* 🔹 Imports
 import css from "./CafeInfo.module.css";
+//! --------------------------------------
 
 //! 🔹 Component
 export default function CafeInfo() {

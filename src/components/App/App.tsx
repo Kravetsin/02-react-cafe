@@ -1,11 +1,11 @@
 //* 🔹 Imports
 import css from "./App.module.css";
 import { useState } from "react";
-import CafeInfo from "./CafeInfo/CafeInfo";
-import VoteOptions from "./VoteOptions/VoteOptions";
-import VoteStats from "./VoteStats/VoteStats";
-import type { Votes } from "../types/votes";
-import Notification from "./Notification/Notification";
+import CafeInfo from "../CafeInfo/CafeInfo";
+import VoteOptions from "../VoteOptions/VoteOptions";
+import VoteStats from "../VoteStats/VoteStats";
+import type { Votes } from "../../types/votes";
+import Notification from "../Notification/Notification";
 //! --------------------------------------
 
 //! 🔹 App
@@ -18,6 +18,7 @@ export default function App() {
     : 0;
   //! --------------------------------------
 
+  //! 🔹 Functions
   const handleVote = (key: keyof Votes) => {
     setVotes({
       ...votes,
@@ -30,6 +31,7 @@ export default function App() {
   };
   //! --------------------------------------
 
+  //! 🔹 Render
   return (
     <div className={css.app}>
       <CafeInfo />
@@ -38,6 +40,7 @@ export default function App() {
         onReset={resetVotes}
         canReset={totalVotes > 0 ? true : false}
       />
+
       {totalVotes > 0 ? (
         <VoteStats votes={votes} total={totalVotes} positive={positiveRate} />
       ) : (

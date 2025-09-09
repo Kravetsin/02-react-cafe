@@ -3,6 +3,7 @@ import css from "./VoteOptions.module.css";
 import type { Votes } from "../../types/votes";
 //! --------------------------------------
 
+//! 🔹 Interface
 interface VoteOptionsProps {
   onVote: (type: keyof Votes) => void;
   onReset: () => void;
