@@ -4,7 +4,7 @@ import { useState } from "react";
 import CafeInfo from "../CafeInfo/CafeInfo";
 import VoteOptions from "../VoteOptions/VoteOptions";
 import VoteStats from "../VoteStats/VoteStats";
-import type { Votes } from "../../types/votes";
+import type { Votes, VoteType } from "../../types/votes";
 import Notification from "../Notification/Notification";
 //! --------------------------------------
 
@@ -19,7 +19,7 @@ export default function App() {
   //! --------------------------------------
 
   //! 🔹 Functions
-  const handleVote = (key: keyof Votes) => {
+  const handleVote = (key: VoteType) => {
     setVotes({
       ...votes,
       [key]: votes[key] + 1,
@@ -42,7 +42,11 @@ export default function App() {
       />
 
       {totalVotes > 0 ? (
-        <VoteStats votes={votes} total={totalVotes} positive={positiveRate} />
+        <VoteStats
+          votes={votes}
+          totalVotes={totalVotes}
+          positiveRate={positiveRate}
+        />
       ) : (
         <Notification />
       )}
